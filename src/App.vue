@@ -6,6 +6,8 @@
       <router-link to="/users/1">User 1</router-link>
     </div>
     <router-view/>
+
+    <router-view name="footer" />
   </div>
 </template>
 
