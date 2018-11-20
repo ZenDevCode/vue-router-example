@@ -2,7 +2,10 @@
   <div>
     <h1>This is for User {{id}}</h1>
 
-    <router-link :to="nextUserUrl">Next User</router-link>
+    <router-link :to="nextUserUrl">Next User</router-link> | 
+    <router-link :to="videoUrl">Videos for this user</router-link>
+
+    <router-view />
   </div>
 </template>
 
@@ -15,6 +18,9 @@ export default {
     },
     nextUserUrl() {
       return this.id + 1;
+    },
+    videoUrl() {
+      return { name: 'videos', params: {id: this.id } };
     },
   },
   watch: {
